@@ -1,0 +1,17 @@
+
+GET http://localhost:4004/service/bsService/Book
+
+###
+
+POST http://localhost:4004/service/bsService/Book
+Content-Type: application/json
+
+{
+    "title" : "nw",
+    "description": "nw in action",
+    "price": 4000,
+    "stock": 350
+} 
+
+###
+GET http://localhost:4004/service/bsService/Author

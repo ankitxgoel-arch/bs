@@ -1,0 +1,31 @@
+{
+  "name": "bs",
+  "version": "1.0.0",
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9",
+    "@sap/xssec": "^4",
+    "@cap-js/notifications": "*"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": "^9"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa"
+      },
+      "auth": "dummy",
+      "db": {"kind": "sqlite", "credentials": {"url": "db.sqlite"}},
+      "connectivity": true,
+      "destinations": true,
+      "html5-repo": true,
+      "application-logging": true
+    }
+  }
+}
