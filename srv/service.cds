@@ -1,10 +1,14 @@
 using { bs as my } from '../db/schema.cds';
+using { northwind as external } from './external/northwind';
 
 @path : '/service/bsService'
 service bsService
 {
     entity Book as projection on my.book;
     entity Author as projection on my.author;
+    entity Products as projection on external.Products;
+    entity Employees as projection on external.Employees;
+
 }
 
 annotate bsService.Book with @(

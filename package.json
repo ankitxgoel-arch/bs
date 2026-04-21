@@ -5,7 +5,10 @@
     "@cap-js/hana": "^2",
     "@sap/cds": "^9",
     "@sap/xssec": "^4",
-    "@cap-js/notifications": "*"
+    "@cap-js/notifications": "*",
+    "@sap-cloud-sdk/connectivity": "^4",
+    "@sap-cloud-sdk/http-client": "^4",
+    "@sap-cloud-sdk/resilience": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
@@ -21,11 +24,23 @@
         "auth": "xsuaa"
       },
       "auth": "dummy",
-      "db": {"kind": "sqlite", "credentials": {"url": "db.sqlite"}},
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      },
       "connectivity": true,
       "destinations": true,
       "html5-repo": true,
-      "application-logging": true
+      "application-logging": true,
+      "northwind": {
+        "kind": "odata",
+        "model": "srv/external/northwind",
+        "credentials":{
+          "url":"https://services.odata.org/V4/northwind/northwind.svc"
+        }
+      }
     }
   }
 }
