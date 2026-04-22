@@ -4,8 +4,16 @@ using { northwind as external } from './external/northwind';
 @path : '/service/bsService'
 service bsService
 {
+    @restrict : [
+        { grant: 'READ', to: ['Manager_Role', 'Employee_Role'] },
+        { grant: 'WRITE', to: 'Manager_Role' },
+        { grant: 'addStock', to: 'Manager_Role' },
+        { grant: 'getStock', to: ['Manager_Role', 'Employee_Role'] }
+    ]
     entity Book as projection on my.book;
+    @requires :[ 'Manager_Role' ]
     entity Author as projection on my.author;
+    
     entity Products as projection on external.Products;
     entity Employees as projection on external.Employees;
 

@@ -1,6 +1,6 @@
 
 GET http://localhost:4004/service/bsService/Book
-
+Authorization: Basic employee@system.com:dummy_pass
 ###
 
 POST http://localhost:4004/service/bsService/Book
@@ -15,3 +15,4 @@ Content-Type: application/json
 
 ###
 GET http://localhost:4004/service/bsService/Author
+Authorization: Basic manager@system.com:dummy_pass
