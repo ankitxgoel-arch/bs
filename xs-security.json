@@ -1,4 +1,5 @@
 {
+  "xsappname" : "bookshop-local-testing",
   "scopes": [
     {
       "name": "$XSAPPNAME.Manager_Role",

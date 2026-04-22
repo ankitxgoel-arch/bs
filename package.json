@@ -23,19 +23,7 @@
       "[production]": {
         "auth": "xsuaa"
       },
-      "auth": {
-        "strategy": "mocked",
-        "users": {
-          "manager@system.com": {
-            "password": "dummy_pass",
-            "roles": ["Manager_Role"]
-          },
-          "employee@system.com": {
-           "password": "dummy_pass",
-           "roles": ["Employee_Role"]
-          }
-        }
-      },
+      "auth": "xsuaa",
       "db": {
         "kind": "sqlite",
         "credentials": {
