@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "dependencies": {
     "@cap-js/hana": "^2",
-    "@sap/cds": "^9",
-    "@sap/xssec": "^4",
     "@cap-js/notifications": "*",
     "@sap-cloud-sdk/connectivity": "^4",
     "@sap-cloud-sdk/http-client": "^4",
-    "@sap-cloud-sdk/resilience": "^4"
+    "@sap-cloud-sdk/resilience": "^4",
+    "@sap/cds": "^9",
+    "@sap/hdi-deploy": "^5.6.1",
+    "@sap/xssec": "^4",
+    "hdb": "^2.27.1"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
@@ -24,13 +26,8 @@
         "auth": "xsuaa",
         "db": "hana"
       },
-      "auth": "xsuaa",
-      "db": {
-        "kind": "sqlite",
-        "credentials": {
-          "url": "db.sqlite"
-        }
-      },
+      "db": "hana",
+      "auth": "dummy",
       "connectivity": true,
       "destinations": true,
       "html5-repo": true,
@@ -38,8 +35,8 @@
       "northwind": {
         "kind": "odata",
         "model": "srv/external/northwind",
-        "credentials":{
-          "url":"https://services.odata.org/V4/northwind/northwind.svc"
+        "credentials": {
+          "url": "https://services.odata.org/V4/northwind/northwind.svc"
         }
       }
     }
